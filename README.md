@@ -6,7 +6,9 @@ A YOLOv8 object detection model trained to identify **drowning**, **swimming**, 
 
 ## Demo
 
-https://github.com/user-attachments/assets/PLACEHOLDER
+https://github.com/user-attachments/assets/90ca6c94-9e1d-4120-ae67-f8edb7b11038
+
+
 
 *Model running on real pool CCTV footage, detecting swimmers in real time with confidence scores overlaid.*
 
