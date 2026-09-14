@@ -1,8 +1,8 @@
-# Underwater Drowning Detection — YOLOv8 Model
+# Underwater Drowning Detection - YOLOv8 Model
 
-A YOLOv8 object detection model trained to identify **drowning**, **swimming**, and **person out of water** behaviors from underwater and aerial footage — built as the computer-vision component of [SeaYou](https://github.com/ZAmystic/seayou), a drone-assisted drowning prevention platform developed at Belgium Campus iTversity.
+A YOLOv8 object detection model trained to identify **drowning**, **swimming**, and **person out of water** behaviors from underwater and aerial footage - built as the computer-vision component of [SeaYou](https://github.com/ZAmystic/seayou), a drone-assisted drowning prevention platform developed at Belgium Campus iTversity.
 
-> **My role:** SeaYou is a multi-person team project spanning drone hardware, a live dashboard, backend services, and drift modeling. This repo covers specifically **the detection model I trained** — data preparation, training, and evaluation. Full platform: [github.com/ZAmystic/seayou](https://github.com/ZAmystic/seayou)
+> **My role:** SeaYou is a multi-person team project spanning drone hardware, a live dashboard, backend services, and drift modeling. This repo covers specifically **the detection model I trained** - data preparation, training, and evaluation. Full platform: [github.com/ZAmystic/seayou](https://github.com/ZAmystic/seayou)
 
 ## Demo
 
@@ -12,11 +12,11 @@ https://github.com/user-attachments/assets/90ca6c94-9e1d-4120-ae67-f8edb7b11038
 
 ## Problem
 
-Drowning is a leading cause of unintentional injury death worldwide, and lifeguard visual monitoring has real limits — distance, glare, crowded pools, low light. This model is a step toward automated visual monitoring: flagging at-risk swimmers from camera or drone footage so a human can be alerted faster.
+Drowning is a leading cause of unintentional injury death worldwide, and lifeguard visual monitoring has real limits - distance, glare, crowded pools, low light. This model is a step toward automated visual monitoring: flagging at-risk swimmers from camera or drone footage so a human can be alerted faster.
 
 ## Dataset
 
-[Drowning Detection Dataset](https://universe.roboflow.com/object-detection-model/drowning-detection-wqiom) (Roboflow Universe) — 9,984 annotated images across three classes: Drowning, Person out of water, and Swimming. Licensed CC BY 4.0.
+[Drowning Detection Dataset](https://universe.roboflow.com/object-detection-model/drowning-detection-wqiom) (Roboflow Universe) - 9,984 annotated images across three classes: Drowning, Person out of water, and Swimming. Licensed CC BY 4.0.
 
 ## Approach
 
@@ -24,7 +24,7 @@ Drowning is a leading cause of unintentional injury death worldwide, and lifegua
 - **Training:** 50 epochs, CPU (AMD Ryzen 5 5600X), ~24.4 hours
 - **Classes used:** Drowning, Person out of water, Swimming
 
-Training and validation loss decreased smoothly across all 50 epochs with no divergence, and precision/recall/mAP climbed steadily to a plateau — indicating stable convergence rather than overfitting or an unstable run.
+Training and validation loss decreased smoothly across all 50 epochs with no divergence, and precision/recall/mAP climbed steadily to a plateau - indicating stable convergence rather than overfitting or an unstable run.
 
 ![Training curves](results/results.png)
 
@@ -49,12 +49,12 @@ Inference: ~37.7ms/image (CPU).
 
 ![Confusion matrix](results/confusion_matrix_normalized.png)
 
-**Limitation, stated honestly:** the three real classes (Drowning, Swimming, Person out of water) are rarely confused *with each other* — the model reliably tells them apart when it detects a person at all. The main weak point is background confusion: Drowning and Swimming subjects are sometimes missed entirely (classified as background) at a meaningful rate, likely due to small/distant subjects and water surface distortion. This is a solvable problem — the results below are on it — but not something to hide.
+**Limitation, stated honestly:** the three real classes (Drowning, Swimming, Person out of water) are rarely confused *with each other* - the model reliably tells them apart when it detects a person at all. The main weak point is background confusion: Drowning and Swimming subjects are sometimes missed entirely (classified as background) at a meaningful rate, likely due to small/distant subjects and water surface distortion. This is a solvable problem - the results below are on it - but not something to hide.
 
 ## What's next
 
 - I plan to build on this by contributing to model deployment/integration within the SeaYou pipeline
-- Address the background-confusion limitation above — likely via targeted augmentation for distant/small subjects and threshold tuning
+- Address the background-confusion limitation above - likely via targeted augmentation for distant/small subjects and threshold tuning
 - Evaluate on real (non-pool) aerial/drone footage to test out-of-distribution performance
 
 ## Repo structure
