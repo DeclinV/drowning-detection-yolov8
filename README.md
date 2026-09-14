@@ -8,9 +8,7 @@ A YOLOv8 object detection model trained to identify **drowning**, **swimming**, 
 
 https://github.com/user-attachments/assets/90ca6c94-9e1d-4120-ae67-f8edb7b11038
 
-
-
-*Model running on real pool CCTV footage, detecting swimmers in real time with confidence scores overlaid.*
+*Model running on real pool CCTV footage, detecting swimmers and drowning victim with confidence scores overlaid.*
 
 ## Problem
 
@@ -18,15 +16,7 @@ Drowning is a leading cause of unintentional injury death worldwide, and lifegua
 
 ## Dataset
 
-[Underwater Drowning Detection Dataset](https://doi.org/10.6084/m9.figshare.29497235) (figshare) — 5,613 manually annotated underwater images across three balanced classes, captured in controlled swimming pool environments with lifeguard supervision and participant consent:
-
-| Class | Images |
-|---|---|
-| Swimming | 1,871 |
-| Struggling | 1,871 |
-| Drowning | 1,871 |
-
-Pre-split 4,488 train / 1,125 validation, YOLO-format bounding box annotations, 640×640 RGB.
+[Drowning Detection Dataset](https://universe.roboflow.com/object-detection-model/drowning-detection-wqiom) (Roboflow Universe) — 9,984 annotated images across three classes: Drowning, Person out of water, and Swimming. Licensed CC BY 4.0.
 
 ## Approach
 
@@ -80,7 +70,7 @@ drone-drowning-detection/
 
 ## Reproducing this
 
-1. Download the [dataset](https://doi.org/10.6084/m9.figshare.29497235) and place it under `datasets/` (matching the path used in the notebook)
+1. Download the [dataset](https://universe.roboflow.com/object-detection-model/drowning-detection-wqiom) and place it under `datasets/` (matching the path used in the notebook)
 2. Install requirements: `pip install -r requirements.txt`
 3. Run `notebooks/training_notebook.ipynb`
 
@@ -92,4 +82,4 @@ ultralytics>=8.0
 
 ## Acknowledgements
 
-Dataset: Alzaabi, H., Alzaabi, S., Kohail, S. — *Underwater Drowning Detection Dataset*, figshare (2025). https://doi.org/10.6084/m9.figshare.29497235
+Dataset: *Drowning Detection Dataset*, Roboflow Universe, by Object detection model (2023), CC BY 4.0. https://universe.roboflow.com/object-detection-model/drowning-detection-wqiom
